@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p8_layoutweb</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            row-gap: 0.5em;
+            column-gap: 0.5em;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-template-rows: 12.5% 25% 50% 12.5%;
+        }
+        nav{
+            grid-column-start: 1;
+            grid-column-end: 7;
+            background-color: #300505;
+        
+    }
+    header{
+        grid-column: 1/7;
+        background-color: #6D1E1E;
+    }
+    main{
+        grid-column: 1/6;
+        background-color: #FE7676;
+    }
+    aside{
+        grid-column: 6/7;
+        background-color: #572929;
+    }
+    footer{
+        grid-column: 1/7;
+        background-color: #EA3737;
+    }
+    /*ipad*/
+    @media only screen and (max-width: 832px) {
+    .container {
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 6.66% 26.64% 33.3% 13.32% 19.98%;
+       }
+       main,nav,header,footer,aside{
+        grid-column: 1/5;
+       }
+
+    }
+    /*iphone8*/
+    @media only screen and (max-width: 375px) {
+        .container {
+            grid-template-columns: auto auto;
+            grid-template-rows: 50% 30% 40% 10% 20%;
+        }
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <p>menu nav</p>
+        </nav>
+        <header>
+            <p>header</p>
+        </header>
+        <main>
+            <p>main content</p>
+        </main>
+        <aside>
+            <p>aside</p>
+        </aside>
+        <footer>
+            <p>footer</p>
+        </footer>
+    </div>
+</body>
+</html>
